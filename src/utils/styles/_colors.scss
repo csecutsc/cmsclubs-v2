@@ -1,0 +1,44 @@
+$primary: #c860fe;
+$background: #ffffff;
+$heading: #424242;
+$text: lighten($heading, 30%);
+
+// Invertible colors
+$_colors: (
+  background: $background,
+  heading: $heading,
+  text: $text,
+);
+
+$colors: map-merge(
+  (
+    primary: $primary,
+  ),
+  $_colors
+);
+
+// b - background, a - active, h - hover
+@mixin generate($tag, $color) {
+  --c-#{$tag}-b-a: #{rgba($color, 0.5)};
+  --c-#{$tag}-b-h: #{rgba($color, 0.3)};
+  --c-#{$tag}-b: #{rgba($color, 0.1)};
+  --c-#{$tag}-a: #{darken($color, 16%)};
+  --c-#{$tag}-h: #{darken($color, 8%)};
+  --c-#{$tag}: #{$color};
+}
+
+@mixin init {
+  :root {
+    @each $key, $val in $colors {
+      @include generate($key, $val);
+    }
+  }
+
+  :global() {
+    .dark {
+      @each $key, $val in $_colors {
+        @include generate($key, lighten(invert($val), 10%));
+      }
+    }
+  }
+}

@@ -1,0 +1,10 @@
+@use '../../utils/styles/units';
+
+.logo {
+    align-items: center;
+    display: flex;
+}
+
+.asset {
+    margin-right: map-get(units.$spacing, element);
+}

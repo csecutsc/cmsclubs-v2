@@ -1,0 +1,38 @@
+// Some shared stuff
+$page: (
+  maxWidth: 65rem,
+);
+
+$text: (
+  splash: 3rem,
+  large: 2rem,
+  larger: 1.2rem,
+  normal: 1rem,
+  smaller: 0.8rem,
+  small: 0.65rem,
+);
+
+// Some generic spacing which is a bit annoying but works fairly well
+$spacing: (
+  page: 2.2rem,
+  section: 1.8rem,
+  container: 1.5rem,
+  component: 1rem,
+  element: 0.5rem,
+  tad: 0.3rem,
+);
+
+// Animation/Transtion related stuff
+$ease: cubic-bezier(0.4, 0, 0.2, 1);
+
+$speed: (
+  slow: 350ms,
+  normal: 250ms,
+  fast: 150ms,
+);
+
+// Media queries (We use max-width cus i find desktop first easier funny enough)
+$media: (
+  tablet: 900px,
+  phone: 600px,
+);

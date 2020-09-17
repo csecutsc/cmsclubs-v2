@@ -1,0 +1,47 @@
+@use '../../utils/styles/colors';
+@use '../../utils/styles/units';
+@use '../../utils/styles/fonts';
+
+$_spacing: ( tight: 1, normal: 1.2, relax: 1.6 );
+$_transform: ( lowercase uppercase capitalize );
+$_align: ( start center end );
+
+.text {
+    font-family: fonts.$font, sans-serif;
+    font-weight: normal;
+    margin: 0;
+
+    @each $tag, $_ in colors.$colors {
+        &--color-#{$tag} {
+            color: var(--c-#{$tag});
+        }
+    }
+
+    @each $tag, $val in units.$text {
+        &--size-#{$tag} {
+            font-size: $val;
+        }
+    }
+
+    @each $tag, $val in $_spacing {
+        &--spacing-#{$tag} {
+            line-height: $val;
+        }
+    }
+
+    @each $val in $_transform {
+        &--transform-#{$val} {
+            text-transform: $val;
+        }
+    }
+
+    @each $val in $_align {
+        &--align-#{$val} {
+            text-align: $val;
+        }
+    }
+
+    &--bold {
+        font-weight: bold;
+    }
+}

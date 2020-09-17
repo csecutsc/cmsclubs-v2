@@ -1,0 +1,10 @@
+@use '../../../utils/styles/units';
+
+.container {
+    padding: map-get(units.$spacing, page) 0;
+    max-width: 30rem;
+}
+
+.heading {
+    margin-bottom: map-get(units.$spacing, container);
+}

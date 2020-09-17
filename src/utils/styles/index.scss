@@ -1,0 +1,11 @@
+@use './colors';
+@use './fonts';
+
+@include colors.init();
+@include fonts.init();
+
+:global {
+    body {
+        margin: 0;
+    }
+}
