@@ -1,0 +1,42 @@
+@use '../../../utils/styles/mixins';
+@use '../../../utils/styles/units';
+
+.events {
+    margin-top: map-get(units.$spacing, section);
+    grid-gap: map-get(units.$spacing, component);
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    list-style-type: none;
+    display: grid;
+    padding: 0;
+
+    @include mixins.media(tablet) {
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
+}
+
+.event {
+    box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
+    padding: map-get(units.$spacing, container);
+    background-color: var(--c-background);
+    border-radius: units.$radius;
+}
+
+.heading {
+    margin-bottom: map-get(units.$spacing, element);
+}
+
+.line {
+    margin: map-get(units.$spacing, component) 0;
+    border: 1px solid var(--c-text-b-h);
+    width: 10%;
+}
+
+.loading {
+    animation: pulse 2s units.$ease 0s infinite;
+    @keyframes pulse {
+        0% { opacity: 0.3 }
+        45% { opacity: 0.8 }
+        55% { opacity: 0.8 }
+        100% { opacity: 0.3 }
+    }
+}

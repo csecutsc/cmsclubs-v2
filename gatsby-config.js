@@ -1,4 +1,5 @@
 const { author, description, keywords } = require(`./package.json`);
+const { PRIMARY_COLOR } = require(`./codegen/env`);
 require(`dotenv`).config();
 
 module.exports = {
@@ -22,7 +23,10 @@ module.exports = {
     {
       resolve: `gatsby-source-graphql`,
       options: {
-        url: process.env.GRAPHCMS_URL,
+        headers: {
+          Authorization: `Bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
+        },
+        url: process.env.GATSBY_GRAPHCMS_ENDPOINT,
         typeName: `GraphCMS`,
         fieldName: `gcms`,
       },
@@ -49,8 +53,8 @@ module.exports = {
         name: `gatsby-starter-default`,
         short_name: `starter`,
         start_url: `/`,
-        background_color: `#663399`,
-        theme_color: `#663399`,
+        background_color: `#ffffff`,
+        theme_color: PRIMARY_COLOR,
         display: `minimal-ui`,
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },

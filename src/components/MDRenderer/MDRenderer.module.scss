@@ -1,0 +1,8 @@
+@use '../../utils/styles/units';
+
+.paragraph {
+    margin-bottom: map-get(units.$spacing, component);
+    &:last-child {
+        margin-bottom: 0;
+    }
+}

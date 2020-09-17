@@ -21,6 +21,7 @@
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-helmet": "^6.1.0",
+    "react-markdown": "^4.3.1",
     "sass": "^1.26.10"
   },
   "devDependencies": {
@@ -41,7 +42,7 @@
   ],
   "scripts": {
     "format": "prettier --write \"**/*.{js,jsx,scss,mdx}\"",
-    "start": "npm run generate && gatsby develop",
+    "start": "npm run generate && GATSBY_GRAPHQL_IDE=playground gatsby develop",
     "build": "npm run generate && gatsby build",
     "generate": "node ./codegen",
     "serve": "gatsby serve",

@@ -3,6 +3,8 @@ $page: (
   maxWidth: 65rem,
 );
 
+$radius: 1rem;
+
 $text: (
   splash: 3rem,
   large: 2rem,
@@ -33,6 +35,6 @@ $speed: (
 
 // Media queries (We use max-width cus i find desktop first easier funny enough)
 $media: (
-  tablet: 900px,
-  phone: 600px,
+  tablet: 850px,
+  phone: 650px,
 );

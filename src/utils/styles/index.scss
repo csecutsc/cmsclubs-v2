@@ -7,5 +7,13 @@
 :global {
     body {
         margin: 0;
+        &::-webkit-scrollbar {
+            width: 0.5rem;
+            height: 0.5rem;
+
+            &-thumb {
+                background-color: var(--c-text);
+            }
+        }
     }
 }

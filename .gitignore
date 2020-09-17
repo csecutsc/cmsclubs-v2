@@ -69,5 +69,7 @@ yarn-error.log
 .yarn-integrity
 
 # Codegen stuff
+/src/utils/styles/_colors.scss
 /src/utils/styles/_fonts.scss
+/src/images/logo.svg
 /static/fonts

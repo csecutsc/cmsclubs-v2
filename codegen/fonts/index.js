@@ -3,9 +3,8 @@ const path = require('path');
 const fss = require('fs');
 require('dotenv').config();
 
+const { FONT } = require('../env');
 const IGNORE = [`index.js`];
-const STATIC = `./static/fonts`;
-const FONT = `Gilroy`;
 
 const _url = (path, weight) => (format) =>
   `url('/fonts/${weight}/${path}') format('${format}')`;
@@ -33,8 +32,8 @@ module.exports = async function () {
   if (!fss.existsSync(`./static`)) {
     await fs.mkdir(`./static`);
   }
-  await fs.rmdir(STATIC, { recursive: true });
-  await fs.mkdir(STATIC);
+  await fs.rmdir(`./static/fonts`, { recursive: true });
+  await fs.mkdir(`./static/fonts`);
   const folders = await fs
     .readdir(__dirname)
     .then((_) => _.filter((f) => !IGNORE.includes(f)));
@@ -42,12 +41,12 @@ module.exports = async function () {
   const content = await Promise.all(
     folders.map(async (folder) => {
       const files = await fs.readdir(path.join(__dirname, folder));
-      await fs.mkdir(path.join(STATIC, folder));
+      await fs.mkdir(path.join(`./static/fonts`, folder));
       await Promise.all(
         files.map((file) =>
           fs
             .readFile(path.join(__dirname, folder, file))
-            .then((_) => fs.writeFile(path.join(STATIC, folder, file), _)),
+            .then((_) => fs.writeFile(path.join(`./static/fonts`, folder, file), _)),
         ),
       );
       return generate(folder, files);
