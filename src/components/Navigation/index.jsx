@@ -20,7 +20,7 @@ export default function Navigation() {
   return (
     <Section contentClassName={styles.container} as='nav'>
       <div className={styles.logo}>
-        <Logo className={styles.asset} fill='var(--c-primary)' width='1.8rem' />
+        <Logo className={styles.asset} fill='var(--c-primary)' />
         <Text color='primary' bold>
           CMSClubs
         </Text>
