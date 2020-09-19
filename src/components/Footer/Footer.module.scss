@@ -1,0 +1,32 @@
+@use '../../utils/styles/mixins';
+@use '../../utils/styles/units';
+
+.container {
+    padding-top: map-get(units.$spacing, page);
+    align-items: center;
+    display: flex;
+}
+
+.text {
+    margin-right: auto;
+}
+
+.button {
+    @include mixins.transition(background-color color);
+    padding: map-get(units.$spacing, element) * 1.2 map-get(units.$spacing, component);
+    background-color: var(--c-text-b);
+    border-radius: 0.5rem;
+    cursor: pointer;
+    outline: none;
+    border: none;
+
+    &:hover, &:focus {
+        background-color: var(--c-text-b-h);
+        color: var(--c-text-h);
+    }
+
+    &:active {
+        background-color: var(--c-text-b-a);
+        color: var(--c-text-a);
+    }
+}

@@ -46,7 +46,9 @@ module.exports = async function () {
         files.map((file) =>
           fs
             .readFile(path.join(__dirname, folder, file))
-            .then((_) => fs.writeFile(path.join(`./static/fonts`, folder, file), _)),
+            .then((_) =>
+              fs.writeFile(path.join(`./static/fonts`, folder, file), _),
+            ),
         ),
       );
       return generate(folder, files);

@@ -1,11 +1,11 @@
 @use '../../utils/styles/units';
 
 .container {
-    padding: map-get(units.$spacing, page);
+  padding: map-get(units.$spacing, page);
 }
 
 .content {
-    max-width: map-get(units.$page, maxWidth);
-    margin: auto;
-    width: 100%;
+  max-width: map-get(units.$page, maxWidth);
+  margin: auto;
+  width: 100%;
 }

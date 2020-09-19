@@ -1,7 +1,7 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { useStaticQuery, graphql } from "gatsby";
+import React from 'react';
+import PropTypes from 'prop-types';
+import { Helmet } from 'react-helmet';
+import { useStaticQuery, graphql } from 'gatsby';
 
 export default function Seo({ title, lang, meta }) {
   const { site } = useStaticQuery(query);
@@ -48,29 +48,29 @@ export default function Seo({ title, lang, meta }) {
         },
       ].concat(meta)}
     />
-  )
+  );
 }
 
 Seo.defaultProps = {
   lang: `en`,
   meta: [],
-}
+};
 
 Seo.propTypes = {
   meta: PropTypes.arrayOf(PropTypes.object),
   title: PropTypes.string.isRequired,
   lang: PropTypes.string,
-}
+};
 
 const query = graphql`
-{
-  site {
-    siteMetadata {
-      description
-      keywords
-      author
-      title
+  {
+    site {
+      siteMetadata {
+        description
+        keywords
+        author
+        title
+      }
     }
   }
-}
 `;

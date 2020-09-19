@@ -1,21 +1,22 @@
 @use '../../utils/styles/mixins';
 
 .link {
-    @include mixins.transition(background-size color);
-    background-image: linear-gradient(currentColor, currentColor);
-    background-position: 0% 100%;
-    background-repeat: no-repeat;
-    background-size: 0% 2px;
-    text-decoration: none;
-    word-break: break-all;
-    padding-bottom: 2px;
+  @include mixins.transition(background-size color);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-position: 0% 100%;
+  background-repeat: no-repeat;
+  background-size: 0% 2px;
+  text-decoration: none;
+  word-break: break-all;
+  padding-bottom: 2px;
 
-    &:hover, &:focus {
-        background-size: 100% 2px;
-        color: var(--c-primary-h);
-    }
+  &:hover,
+  &:focus {
+    background-size: 100% 2px;
+    color: var(--c-primary-h);
+  }
 
-    &:active {
-        color: var(--c-primary-a);
-    }
+  &:active {
+    color: var(--c-primary-a);
+  }
 }

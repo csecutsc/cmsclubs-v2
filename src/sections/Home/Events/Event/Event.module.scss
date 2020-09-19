@@ -1,0 +1,18 @@
+@use '../../../../utils/styles/units';
+
+.event {
+  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
+  padding: map-get(units.$spacing, container);
+  background-color: var(--c-background);
+  border-radius: units.$radius;
+}
+
+.heading {
+  margin-bottom: map-get(units.$spacing, element);
+}
+
+.line {
+  margin: map-get(units.$spacing, component) 0;
+  border: 1px solid var(--c-text-b-h);
+  width: 10%;
+}

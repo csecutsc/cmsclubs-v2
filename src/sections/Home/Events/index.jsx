@@ -1,24 +1,12 @@
 import React, { useEffect, useState } from 'react';
-import MDRenderer from '../../../components/MDRenderer';
 import Section from '../../../components/Section';
 import Text from '../../../components/Text';
 import Link from '../../../components/Link';
+import Event from './Event';
 import styles from './Events.module.scss';
 
-const date = new Intl.DateTimeFormat(`en`, {
-  month: `short`,
-  year: `numeric`,
-  day: `numeric`,
-}).format;
-
-const time = new Intl.DateTimeFormat(`en`, {
-  minute: `2-digit`,
-  hour: `numeric`,
-  hour12: true,
-}).format;
-
 export default function Events() {
-  const [ events, setEvents ] = useState();
+  const [events, setEvents] = useState();
   useEffect(() => {
     let mounted = true;
     (async () => {
@@ -37,8 +25,8 @@ export default function Events() {
             query,
           }),
         },
-      ).then(_ => _.json());
-      
+      ).then((_) => _.json());
+
       if (errors) {
         console.error(errors);
       }
@@ -48,7 +36,7 @@ export default function Events() {
     })();
     return () => {
       mounted = false;
-    }
+    };
   }, []);
 
   return (
@@ -57,67 +45,21 @@ export default function Events() {
         <Text as='h2' color='heading' size='large' bold>
           Upcoming Events
         </Text>
-        <Link to="/events" size='larger' bold>View All</Link>
+        <Link to='/events' size='larger' bold>
+          View All
+        </Link>
       </div>
       <ul className={styles.events}>
-        {events ? events.map(event => {
-          const start = new Date(event.start);
-          const end = new Date(event.end);
-          let dateText;
-
-          if (start.toLocaleDateString() === end.toLocaleDateString()) {
-            dateText = `${date(start)}, ${time(start)} - ${time(end)}`;
-          } else {
-            dateText = `${date(start)}, ${time(start)} - ${date(end)} ${time(end)}`;
-          }
-
-          return (
-            <li key={event.id} className={styles.event}>
-              <Text
-                className={styles.heading}
-                color='heading'
-                size='larger'
-                as='h3'
-                bold
-              >
-                {event.heading}
-              </Text>
-              <Text
-                color='primary'
-                spacing='relax'
-                bold
-              >
-                <Text color='heading' as='span' bold>Date: </Text>
-                {dateText}
-              </Text>
-              <Text
-                color='primary'
-                spacing='relax'
-                bold
-              >
-                <Text color='heading' as='span' bold>Hosted by: </Text>
-                {event.clubs.map(i => i.short).join(', ')}
-              </Text>
-              <Text
-                color='primary'
-                spacing='relax'
-                bold
-              >
-                <Text color='heading' as='span' bold>Location: </Text>
-                {event.location}
-              </Text>
-              <hr className={styles.line}/>
-              <MDRenderer>{event.description}</MDRenderer>
-            </li>
-          );
-        }) : (
-          <Text
-            className={styles.loading}
-            color='primary'
-            size='large'
-            as='li'
-            bold
-          >
+        {events ? (
+          events.length ? (
+            events.map((event) => <Event key={event.id} event={event} />)
+          ) : (
+            <Text size='larger' as='li'>
+              No upcoming events currently :c
+            </Text>
+          )
+        ) : (
+          <Text className={styles.loading} size='larger' as='li'>
             Fetching Events...
           </Text>
         )}

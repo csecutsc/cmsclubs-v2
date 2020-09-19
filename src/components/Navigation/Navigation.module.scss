@@ -1,10 +1,57 @@
+@use '../../utils/styles/mixins';
 @use '../../utils/styles/units';
 
+.container {
+  display: flex;
+}
+
 .logo {
-    align-items: center;
-    display: flex;
+  align-items: center;
+  margin-right: auto;
+  display: flex;
 }
 
 .asset {
-    margin-right: map-get(units.$spacing, element);
+  margin-right: map-get(units.$spacing, element);
+}
+
+.items {
+  list-style-type: none;
+  display: flex;
+}
+
+.item {
+  margin-left: map-get(units.$spacing, element);
+}
+
+.link {
+  @include mixins.transition(background-color color);
+  padding: map-get(units.$spacing, element) * 1.5 map-get(units.$spacing, component);
+  border-radius: 0.5rem;
+  text-decoration: none;
+
+  &:hover, &:focus {
+    background-color: var(--c-text-b);
+    color: var(--c-text-h);
+  }
+
+  &:active {
+    background-color: var(--c-text-b-h);
+    color: var(--c-text-a);
+  }
+
+  &--active {
+    background-color: var(--c-primary-b);
+    color: var(--c-primary);
+
+    &:hover, &:focus {
+      background-color: var(--c-primary-b-h);
+      color: var(--c-primary-h);
+    }
+
+    &:active {
+      background-color: var(--c-primary-b-a);
+      color: var(--c-primary-a);
+    }
+  }
 }
