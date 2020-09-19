@@ -57,6 +57,6 @@ module.exports = async function () {
 
   await fs.writeFile(
     `./src/utils/styles/_fonts.scss`,
-    `$font: ${FONT};\n\n@mixin init {${content}\n}`,
+    `$font: '${FONT}';\n\n@mixin init {${content}\n}`,
   );
 };
