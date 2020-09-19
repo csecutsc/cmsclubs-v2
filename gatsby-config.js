@@ -50,8 +50,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `gatsby-starter-default`,
-        short_name: `starter`,
+        name: `cms-clubs`,
+        short_name: `cms-clubs`,
         start_url: `/`,
         background_color: `#ffffff`,
         theme_color: PRIMARY_COLOR,
@@ -59,8 +59,6 @@ module.exports = {
         icon: `src/images/logo.svg`, // This path is relative to the root of the site.
       },
     },
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
 };
