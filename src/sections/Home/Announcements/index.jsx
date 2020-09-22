@@ -53,7 +53,7 @@ export default function Announcements() {
           )
         ) : (
           <Text className={styles.loading} size='larger' as='li'>
-            Fetching Events...
+            Fetching Announcements...
           </Text>
         )}
       </ul>

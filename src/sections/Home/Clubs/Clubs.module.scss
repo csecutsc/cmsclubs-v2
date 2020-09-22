@@ -31,3 +31,36 @@
 .heading {
   margin-bottom: map-get(units.$spacing, element);
 }
+
+.icons {
+  list-style-type: none;
+  align-items: center;
+  flex-wrap: wrap;
+  display: flex;
+  padding: 0;
+}
+
+.icon-link {
+  @include mixins.transition(background-color color);
+  margin-bottom: map-get(units.$spacing, element);
+  margin-right: map-get(units.$spacing, element);
+  padding: map-get(units.$spacing, tad);
+  color: var(--c-primary);
+  border-radius: 999px;
+  display: flex;
+
+  &:hover, &:focus {
+    background-color: var(--c-primary-b);
+    color: var(--c-primary-h);
+  }
+
+  &:active {
+    background-color: var(--c-primary-b-h);
+    color: var(--c-primary-a);
+  }
+}
+
+.icon-asset {
+  width: map-get(units.$text, larger);
+  height: auto;
+}

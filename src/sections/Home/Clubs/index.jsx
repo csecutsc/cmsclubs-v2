@@ -5,6 +5,7 @@ import MDRenderer from '../../../components/MDRenderer';
 import Section from '../../../components/Section';
 import Text from '../../../components/Text';
 import Link from '../../../components/Link';
+import icons from './icon-map';
 import styles from './Clubs.module.scss';
 
 export default function Clubs() {
@@ -21,7 +22,13 @@ export default function Clubs() {
             className={styles.club}
             key={club.id}
           >
-            <GraphImg image={club.logo} alt='club logo' maxWidth={60}/>
+            <GraphImg
+              backgroundColor={club.color.hex}
+              image={club.logo}
+              alt='club logo'
+              maxWidth={60}
+              withWebp
+            />
             <div>
               <Text
                 className={styles.heading}
@@ -32,10 +39,31 @@ export default function Clubs() {
               >
                 {club.name} ({club.short})
               </Text>
+              <ul className={styles.icons}>
+                {club.links.map(link => {
+                  if (link.protocol === `Email`) {
+                    link.url = `mailto:${link.url}`;
+                  } else if (link.protocol === `Telephone`) {
+                    link.url = `tel:${link.url}`;
+                  }
+                  return (
+                    <li key={link.id}>
+                      <a className={styles[`icon-link`]} href={link.url} target='_blank' rel='noreferrer noopener'>
+                        {React.createElement(
+                          icons[link.type],
+                          {
+                            className: styles[`icon-asset`],
+                          },
+                        )}
+                      </a>
+                    </li>
+                  );
+                })}
+              </ul>
               <MDRenderer>{club.description}</MDRenderer>
-              <Link to={club.customUrl} bold>
+              {/*<Link to={club.customUrl} bold>
                 Learn more
-              </Link>
+              </Link>*/}
             </div>
           </li>
         ))}
@@ -61,6 +89,14 @@ const query = graphql`
         }
         customUrl
         description
+        links(
+          where: { type_not: OTHER }
+        ) {
+          id
+          url
+          type
+          protocol
+        }
       }
     }
   }
