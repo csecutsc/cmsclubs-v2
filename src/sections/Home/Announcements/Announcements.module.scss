@@ -2,7 +2,7 @@
 @use '../../../utils/styles/mixins';
 @use '../../../utils/styles/units';
 
-.events {
+.items {
   margin-top: map-get(units.$spacing, section);
   grid-gap: map-get(units.$spacing, component);
   grid-template-columns: repeat(2, minmax(0, 1fr));

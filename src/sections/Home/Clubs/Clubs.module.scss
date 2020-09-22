@@ -2,32 +2,32 @@
 @use '../../../utils/styles/units';
 
 .clubs {
-    margin-top: map-get(units.$spacing, section);
-    grid-gap: map-get(units.$spacing, container);
-    grid-template-columns: repeat(2, 1fr);
-    list-style-type: none;
-    display: grid;
-    padding: 0;
+  margin-top: map-get(units.$spacing, section);
+  grid-gap: map-get(units.$spacing, container);
+  grid-template-columns: repeat(2, 1fr);
+  list-style-type: none;
+  display: grid;
+  padding: 0;
 
-    @include mixins.media(tablet) {
-        grid-template-columns: 1fr;
-    }
+  @include mixins.media(tablet) {
+    grid-template-columns: 1fr;
+  }
 }
 
 .club {
-    box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
-    grid-gap: map-get(units.$spacing, container);
-    padding: map-get(units.$spacing, container);
-    background-color: var(--c-background);
-    grid-template-columns: 3rem 1fr;
-    border-radius: units.$radius;
-    display: grid;
+  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
+  grid-gap: map-get(units.$spacing, container);
+  padding: map-get(units.$spacing, container);
+  background-color: var(--c-background);
+  grid-template-columns: 3rem 1fr;
+  border-radius: units.$radius;
+  display: grid;
 }
 
 .logo {
-    width: 100%;
+  width: 100%;
 }
 
 .heading {
-    margin-bottom: map-get(units.$spacing, element);
+  margin-bottom: map-get(units.$spacing, element);
 }

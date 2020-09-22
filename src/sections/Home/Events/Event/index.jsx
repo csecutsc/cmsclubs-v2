@@ -3,13 +3,13 @@ import MDRenderer from '../../../../components/MDRenderer';
 import Text from '../../../../components/Text';
 import styles from './Event.module.scss';
 
-const date = new Intl.DateTimeFormat(`en`, {
+const date = new Intl.DateTimeFormat(`en-US`, {
   month: `short`,
   year: `numeric`,
   day: `numeric`,
 }).format;
 
-const time = new Intl.DateTimeFormat(`en`, {
+const time = new Intl.DateTimeFormat(`en-US`, {
   minute: `2-digit`,
   hour: `numeric`,
   hour12: true,

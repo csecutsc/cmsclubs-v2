@@ -11,7 +11,7 @@ export default function Layout({ children, ...props }) {
       <Seo {...props} />
       <Navigation />
       <main>{children}</main>
-      <Footer/>
+      <Footer />
     </>
   );
 }

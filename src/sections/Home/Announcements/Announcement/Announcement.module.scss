@@ -1,0 +1,12 @@
+@use '../../../../utils/styles/units';
+
+.card {
+  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
+  padding: map-get(units.$spacing, container);
+  background-color: var(--c-background);
+  border-radius: units.$radius;
+}
+
+.date {
+  margin-bottom: map-get(units.$spacing, element);
+}

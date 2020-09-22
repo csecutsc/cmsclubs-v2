@@ -1,0 +1,19 @@
+@use './units';
+
+@mixin pulse($speed: 2s) {
+  animation: pulse $speed units.$ease 0s infinite;
+  @keyframes pulse {
+    0% {
+      opacity: 0.3;
+    }
+    45% {
+      opacity: 0.8;
+    }
+    55% {
+      opacity: 0.8;
+    }
+    100% {
+      opacity: 0.3;
+    }
+  }
+}

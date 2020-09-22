@@ -14,7 +14,9 @@ export default function NotFoundPage() {
         <Text spacing='relax' size='larger' bold>
           Maybe you'll find what you're looking for one day...
         </Text>
-        <Link to='/' bold>Back to Home</Link>
+        <Link to='/' bold>
+          Back to Home
+        </Link>
       </Section>
     </Layout>
   );

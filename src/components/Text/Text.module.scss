@@ -13,7 +13,9 @@ $_align: (start center end);
 
 .text {
   font-family: fonts.$font, sans-serif;
+  text-overflow: ellipsis;
   font-weight: normal;
+  overflow: hidden;
   margin: 0;
 
   @each $tag, $_ in colors.$colors {

@@ -1,12 +1,11 @@
 import React, { useEffect, useState } from 'react';
 import Section from '../../../components/Section';
 import Text from '../../../components/Text';
-import Link from '../../../components/Link';
-import Event from './Event';
-import styles from './Events.module.scss';
+import Announcement from './Announcement';
+import styles from './Announcements.module.scss';
 
-export default function Events() {
-  const [events, setEvents] = useState();
+export default function Announcements() {
+  const [annons, setAnnons] = useState();
   useEffect(() => {
     let mounted = true;
     (async () => {
@@ -31,31 +30,25 @@ export default function Events() {
         console.error(errors);
       }
       if (mounted) {
-        setEvents(data?.events || []);
+        setAnnons(data?.announcements || []);
       }
     })();
     return () => {
       mounted = false;
     };
   }, []);
-
   return (
     <Section>
-      <div>
-        <Text as='h2' color='heading' size='large' bold>
-          Upcoming Events
-        </Text>
-        <Link to='/events' size='larger' bold>
-          View All
-        </Link>
-      </div>
-      <ul className={styles.events}>
-        {events ? (
-          events.length ? (
-            events.map((event) => <Event key={event.id} event={event} />)
+      <Text as='h2' size='large' color='heading' bold>
+        Announcements
+      </Text>
+      <ul className={styles.items}>
+        {annons ? (
+          annons.length ? (
+            annons.map((annon) => <Announcement key={annon.id} annon={annon} />)
           ) : (
             <Text size='larger' as='li'>
-              No upcoming events currently :c
+              No announcements currently :c
             </Text>
           )
         ) : (
@@ -69,21 +62,19 @@ export default function Events() {
 }
 
 const query = `
-query getEvents($now: DateTime!) {
-  events(
-    where: { end_gt: $now }
-    orderBy: start_ASC
-    first: 6
+query getAnnouncements($now: DateTime!) {
+  announcements(
+    where: {
+      releaseDatetime_lte: $now
+      endDatetime_gte: $now
+      global: true
+    }
+    orderBy: releaseDatetime_ASC
   ) {
+    id
     heading
     description
-    location
-    start
-    end
-    id
-    clubs {
-      short
-    }
+    releaseDatetime
   }
 }
 `;
