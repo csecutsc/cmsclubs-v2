@@ -4,15 +4,18 @@
 .container {
   padding-top: map-get(units.$spacing, page);
   align-items: center;
+  flex-wrap: wrap;
   display: flex;
 }
 
 .text {
+  margin-bottom: map-get(units.$spacing, component);
   margin-right: auto;
 }
 
 .button {
   @include mixins.transition(background-color color);
+  margin-bottom: map-get(units.$spacing, component);
   padding: map-get(units.$spacing, element) * 1.2
     map-get(units.$spacing, component);
   background-color: var(--c-text-b);

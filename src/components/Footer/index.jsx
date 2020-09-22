@@ -7,7 +7,7 @@ export default function Footer() {
   return (
     <Section contentClassName={styles.container} as='footer'>
       <Text className={styles.text} bold>
-        Made with ❤ by CSEC
+        Made with ❤ by CSEC Development
       </Text>
       <Text
         onClick={() =>
