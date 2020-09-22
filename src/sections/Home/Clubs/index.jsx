@@ -1,4 +1,5 @@
 import React from 'react';
+import GraphImg from 'graphcms-image';
 import { graphql, useStaticQuery } from 'gatsby';
 import MDRenderer from '../../../components/MDRenderer';
 import Section from '../../../components/Section';
@@ -20,14 +21,7 @@ export default function Clubs() {
             className={styles.club}
             key={club.id}
           >
-            <div>
-              <img
-                className={styles.logo}
-                src={club.logo.url}
-                alt='club logo'
-                width='40'
-              />
-            </div>
+            <GraphImg image={club.logo} alt='club logo' maxWidth={60}/>
             <div>
               <Text
                 className={styles.heading}
@@ -58,7 +52,9 @@ const query = graphql`
         short
         id
         logo {
-          url
+          handle
+          height
+          width
         }
         color {
           hex
