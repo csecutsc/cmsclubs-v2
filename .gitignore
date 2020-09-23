@@ -74,6 +74,6 @@ yarn-error.log
 # Codegen stuff
 /src/utils/styles/_colors.scss
 /src/utils/styles/_fonts.scss
-/src/images/logo.inline.svg
 /src/images/logo.svg
+/static/logo.svg
 /static/fonts

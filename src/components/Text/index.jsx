@@ -56,6 +56,7 @@ Text.propTypes = {
   /** What element should this component be? */
   as: PropTypes.oneOfType([
     PropTypes.string,
-    PropTypes.node,
+    PropTypes.object,
+    PropTypes.func,
   ]),
 };

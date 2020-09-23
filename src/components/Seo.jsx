@@ -2,7 +2,6 @@ import React from 'react';
 import PropTypes from 'prop-types';
 import { Helmet } from 'react-helmet';
 import { useStaticQuery, graphql } from 'gatsby';
-import logo from '../images/logo.svg';
 
 export default function Seo({ title, lang, meta }) {
   const { site } = useStaticQuery(query);
@@ -25,7 +24,7 @@ export default function Seo({ title, lang, meta }) {
         },
         {
           property: `og:image`,
-          content: logo,
+          content: `/logo.svg`,
         },
         {
           property: `og:image:type`,

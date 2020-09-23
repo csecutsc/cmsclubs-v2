@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'gatsby';
-import Logo from '../../images/logo.inline.svg';
+import Logo from '../../images/logo.svg';
 import Section from '../Section';
 import Text from '../Text';
 import styles from './Navigation.module.scss';
