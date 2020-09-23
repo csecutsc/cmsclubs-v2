@@ -1,4 +1,4 @@
-# CMS Clubs website
+# CMS Clubs Website
 
 ## Statuses
 
