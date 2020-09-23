@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
+import withWindow from '../utils/withWindow';
 
-const setClass = (isDark) => {
-  if (typeof window === `undefined`) return false;
+const setClass = withWindow(isDark => {
   if (isDark) {
     document.body.classList.add(`dark`);
   } else {
@@ -9,11 +9,10 @@ const setClass = (isDark) => {
   }
   localStorage.setItem(`isDark`, isDark);
   return isDark;
-};
+});
 
-const initState = () => {
-  if (typeof window === `undefined`) return false;
-  const isDark = window.localStorage.getItem(`isDark`);
+const initState = withWindow(() => {
+  const isDark = localStorage.getItem(`isDark`);
 
   if (isDark) {
     return isDark === `true`;
@@ -22,7 +21,7 @@ const initState = () => {
   } else {
     return false;
   }
-};
+});
 
 export const DarkModeContext = React.createContext({
   setIsDark: () => {},
