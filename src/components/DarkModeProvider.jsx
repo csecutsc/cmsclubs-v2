@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 
 const setClass = (isDark) => {
+  if (typeof window === `undefined`) return false;
   if (isDark) {
     document.body.classList.add(`dark`);
   } else {
@@ -11,7 +12,9 @@ const setClass = (isDark) => {
 };
 
 const initState = () => {
-  const isDark = localStorage.getItem(`isDark`);
+  if (typeof window === `undefined`) return false;
+  const isDark = window.localStorage.getItem(`isDark`);
+
   if (isDark) {
     return isDark === `true`;
   } else if (window.matchMedia) {
