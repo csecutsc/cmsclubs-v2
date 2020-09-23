@@ -50,12 +50,12 @@
 
   &--active {
     background-color: var(--c-primary-b);
-    color: var(--c-primary);
+    color: var(--c-primary-h);
 
     &:hover,
     &:focus {
       background-color: var(--c-primary-b-h);
-      color: var(--c-primary-h);
+      color: var(--c-primary-a);
     }
 
     &:active {

@@ -19,6 +19,7 @@
   padding: map-get(units.$spacing, element) * 1.2
     map-get(units.$spacing, component);
   background-color: var(--c-text-b);
+  color: var(--c-text-h);
   border-radius: 0.5rem;
   cursor: pointer;
   outline: none;
@@ -27,7 +28,7 @@
   &:hover,
   &:focus {
     background-color: var(--c-text-b-h);
-    color: var(--c-text-h);
+    color: var(--c-text-a);
   }
 
   &:active {

@@ -1,7 +1,7 @@
 $primary: $COLOR;
 $background: #ffffff;
 $heading: #424242;
-$text: lighten($heading, 30%);
+$text: lighten($heading, 20%);
 
 // Invertible colors
 $_colors: (
@@ -19,11 +19,11 @@ $colors: map-merge(
 
 // b - background, a - active, h - hover
 @mixin generate($tag, $color) {
-  --c-#{$tag}-b-a: #{rgba($color, 0.32)};
-  --c-#{$tag}-b-h: #{rgba($color, 0.16)};
-  --c-#{$tag}-b: #{rgba($color, 0.08)};
-  --c-#{$tag}-a: #{darken($color, 16%)};
-  --c-#{$tag}-h: #{darken($color, 8%)};
+  --c-#{$tag}-b-a: #{rgba($color, 0.15)};
+  --c-#{$tag}-b-h: #{rgba($color, 0.10)};
+  --c-#{$tag}-b: #{rgba($color, 0.05)};
+  --c-#{$tag}-a: #{darken($color, 10%)};
+  --c-#{$tag}-h: #{darken($color, 5%)};
   --c-#{$tag}: #{$color};
 }
 
