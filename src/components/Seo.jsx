@@ -24,7 +24,7 @@ export default function Seo({ title, lang, meta }) {
         },
         {
           property: `og:image`,
-          content: `${site.siteMetadata.homepage}/logo.svg`,
+          content: `${site.siteMetadata.homepage}/logo.png`,
         },
         {
           property: `og:image:type`,
