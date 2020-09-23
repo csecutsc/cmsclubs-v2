@@ -20,24 +20,24 @@ export default function Seo({ title, lang, meta }) {
           content: site.siteMetadata.description,
         },
         {
-          name: `og:image`,
+          property: `og:title`,
+          content: title,
+        },
+        {
+          property: `og:image`,
           content: logo,
         },
         {
-          name: `og:image:type`,
+          property: `og:image:type`,
           content: `image/svg+xml`,
         },
         {
-          name: `og:image:width`,
+          property: `og:image:width`,
           content: `400`,
         },
         {
-          name: `og:image:height`,
+          property: `og:image:height`,
           content: `400`,
-        },
-        {
-          property: `og:title`,
-          content: title,
         },
         {
           property: `og:description`,
