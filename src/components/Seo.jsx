@@ -24,7 +24,7 @@ export default function Seo({ title, lang, meta }) {
         },
         {
           property: `og:image`,
-          content: `logo.svg`,
+          content: `${site.siteMetadata.homepage}/logo.svg`,
         },
         {
           property: `og:image:type`,
@@ -83,6 +83,7 @@ const query = graphql`
     site {
       siteMetadata {
         description
+        homepage
         keywords
         author
         title

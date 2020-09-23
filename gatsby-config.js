@@ -1,4 +1,4 @@
-const { author, description, keywords } = require(`./package.json`);
+const { author, description, homepage, keywords } = require(`./package.json`);
 const { PRIMARY_COLOR } = require(`./codegen/env`);
 require(`dotenv`).config();
 
@@ -6,6 +6,7 @@ module.exports = {
   siteMetadata: {
     title: `CMSClubs`,
     description,
+    homepage,
     keywords,
     author,
   },

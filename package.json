@@ -2,6 +2,7 @@
   "name": "@csec/cms-clubs",
   "private": true,
   "description": "The portal to all clubs and events related to the Department of Computer and Mathematical Sciences at UTSC.",
+  "homepage": "https://www.utsccms.club",
   "version": "0.1.0",
   "author": "CSEC",
   "repository": {
