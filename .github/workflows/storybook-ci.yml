@@ -34,6 +34,7 @@ jobs:
     - name: Build + Install
       run: |
         npm ci
+        npm run generate
         npm run build-storybook
     - name: Deploy
       uses: JamesIves/github-pages-deploy-action@releases/v3
