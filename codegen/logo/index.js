@@ -1,5 +1,6 @@
 const { PRIMARY_COLOR } = require('../env');
 const fs = require('fs/promises');
+const sharp = require(`sharp`);
 const path = require('path');
 const fss = require('fs');
 
@@ -18,6 +19,9 @@ module.exports = async function () {
 
   return Promise.all([
     fs.writeFile(`./src/images/logo.svg`, svg),
-    fs.writeFile(`./static/logo.svg`, svg),
+    fs.writeFile(
+      `./static/logo.png`,
+      await sharp(Buffer.from(svg, `utf8`), { density: 2400 }).resize(300, 300).png().toBuffer(),
+    ),
   ]);
 };

@@ -28,15 +28,15 @@ export default function Seo({ title, lang, meta }) {
         },
         {
           property: `og:image:type`,
-          content: `image/svg+xml`,
+          content: `image/png`,
         },
         {
           property: `og:image:width`,
-          content: `400`,
+          content: `300`,
         },
         {
           property: `og:image:height`,
-          content: `400`,
+          content: `300`,
         },
         {
           property: `og:description`,
