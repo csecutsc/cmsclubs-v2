@@ -46,6 +46,7 @@ export default function Navigation() {
           <button
             onClick={() => setIsDark()}
             className={styles.button}
+            aria-label='toggle darkmode'
           >
             <RiMoonClearLine
               className={classNames(

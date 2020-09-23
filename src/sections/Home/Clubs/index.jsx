@@ -53,6 +53,7 @@ export default function Clubs() {
                         href={link.url}
                         target='_blank'
                         rel='noreferrer noopener'
+                        aria-label={link.label}
                       >
                         {React.createElement(icons[link.type], {
                           className: styles[`icon-asset`],
@@ -95,6 +96,7 @@ const query = graphql`
           id
           url
           type
+          label
           protocol
         }
       }
