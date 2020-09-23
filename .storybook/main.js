@@ -3,6 +3,7 @@ module.exports = {
     '../docs/**/*.stories.mdx',
     '../src/**/*.stories.mdx',
   ],
+  // Gatsby specific stuff (DW about it)
   webpackFinal: async config => {
     config.module.rules[0].exclude = [/node_modules\/(?!(gatsby)\/)/];
     config.module.rules[0].use[0].loader = require.resolve("babel-loader");
