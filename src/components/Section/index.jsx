@@ -31,8 +31,5 @@ Section.propTypes = {
   /** Exactly what you think it is */
   children: PropTypes.node,
   /** What is the tag used by the container? */
-  as: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.node,
-  ]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.node]),
 };

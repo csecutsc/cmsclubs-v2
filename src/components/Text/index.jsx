@@ -54,9 +54,5 @@ Text.propTypes = {
   /** You should know this */
   bold: PropTypes.bool,
   /** What element should this component be? */
-  as: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.object,
-    PropTypes.func,
-  ]),
+  as: PropTypes.oneOfType([PropTypes.string, PropTypes.object, PropTypes.func]),
 };

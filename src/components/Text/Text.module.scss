@@ -12,6 +12,7 @@ $_transform: (lowercase uppercase capitalize);
 $_align: (start center end);
 
 .text {
+  @include mixins.transition(color);
   font-family: fonts.$font, sans-serif;
   text-overflow: ellipsis;
   font-weight: normal;

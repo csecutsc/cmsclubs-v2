@@ -1,37 +1,48 @@
 @use '../src/utils/styles/fonts';
 
 :global {
-    html {
-        font-family: fonts.$font, sans-serif;
-        color: var(--c-text);
-        line-height: 1.6;
-    }
+  html {
+    font-family: fonts.$font, sans-serif;
+    color: var(--c-text);
+    line-height: 1.6;
+  }
 
-    h1, h2, h3, h4, h5, h6 {
-        line-height: 1.2;
-    }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    line-height: 1.2;
+  }
 
-    h1, h2, h4, h5, h6 {
-        color: var(--c-heading);
-    }
+  h1,
+  h2,
+  h4,
+  h5,
+  h6 {
+    color: var(--c-heading);
+  }
 
-    h3, a {
-        color: var(--c-primary);
-    }
+  h3,
+  a {
+    color: var(--c-primary);
+  }
 
-    code {
-        background-color: var(--c-primary-b);
-        padding: 0.2rem 0.3rem;
-        color: var(--c-primary);
-        border-radius: 2px;
-        font-size: 80%;
-    }
+  code {
+    background-color: var(--c-primary-b);
+    padding: 0.2rem 0.3rem;
+    color: var(--c-primary);
+    border-radius: 2px;
+    font-size: 80%;
+  }
 
-    th, td {
-        padding: 0.5rem;
-    }
+  th,
+  td {
+    padding: 0.5rem;
+  }
 
-    th {
-        text-align: start;
-    }
+  th {
+    text-align: start;
+  }
 }

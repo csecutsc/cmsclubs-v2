@@ -1,7 +1,7 @@
 @use './units';
 
 // Add tranisitions to attributes because im lazy
-@mixin transition($attrs, $speed: normal) {
+@mixin transition($attrs, $speed: normal, $await: true) {
   $res: '';
 
   // Multiple attributes
@@ -15,7 +15,13 @@
     $res: _makeTransition($attrs, $speed);
   }
 
-  transition: $res;
+  @if $await {
+    :global(.animate) & {
+      transition: $res;
+    }
+  } @else {
+    transition: $res;
+  }
 }
 
 // Builds a transition with given props

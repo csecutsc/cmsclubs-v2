@@ -2,21 +2,22 @@ import { Meta, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import sampleText from './sampleText';
 import MDRenderer from '.';
 
-<Meta title='Components/MDRenderer' component={MDRenderer}/>
+<Meta title='Components/MDRenderer' component={MDRenderer} />
 
 # MDRenderer Component
+
 ### Used for converting string representation of MD to React Components
 
-<div style={{ margin: `4rem 0` }}/>
+<div style={{ margin: `4rem 0` }} />
 
 ## Props
-<ArgsTable component={MDRenderer}/>
 
-<div style={{ margin: `4rem 0` }}/>
+<ArgsTable component={MDRenderer} />
+
+<div style={{ margin: `4rem 0` }} />
 
 ## Example
+
 <Canvas>
-    <MDRenderer>
-        {sampleText}
-    </MDRenderer>
+  <MDRenderer>{sampleText}</MDRenderer>
 </Canvas>

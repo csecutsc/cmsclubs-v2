@@ -1,23 +1,32 @@
 import { Meta, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
 import Link from '.';
 
-<Meta title='Components/Link' component={Link}/>
+<Meta title='Components/Link' component={Link} />
 
 # Link Component
+
 ### Used for internal & external linking
 
-<div style={{ margin: `4rem 0` }}/>
+<div style={{ margin: `4rem 0` }} />
 
 ## Props
-<ArgsTable component={Link}/>
 
-*Also extends props from `Text`
+<ArgsTable component={Link} />
 
-<div style={{ margin: `4rem 0` }}/>
+\*Also extends props from `Text`
+
+<div style={{ margin: `4rem 0` }} />
 
 ## Example
+
 <Canvas isColumn>
-    <Link to='/somewhere' bold>Link to relative page</Link>
-    <Link to='https://google.ca' bold>Link to external page</Link>
-    <Link to='/' bold>TestingAnExtremelyLongStringWithNoWhiteSpaceToSeeIfItIsHandledProperlyInAWaySuchThatItDoesntBleedOutOfTheElementOwOwOwOwOwOwO</Link>
+  <Link to='/somewhere' bold>
+    Link to relative page
+  </Link>
+  <Link to='https://google.ca' bold>
+    Link to external page
+  </Link>
+  <Link to='/' bold>
+    TestingAnExtremelyLongStringWithNoWhiteSpaceToSeeIfItIsHandledProperlyInAWaySuchThatItDoesntBleedOutOfTheElementOwOwOwOwOwOwO
+  </Link>
 </Canvas>

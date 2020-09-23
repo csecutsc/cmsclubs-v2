@@ -22,6 +22,7 @@ export default function Clubs() {
             key={club.id}
           >
             <GraphImg
+              className={styles.logo}
               backgroundColor={club.color.hex}
               image={club.logo}
               alt='club logo'

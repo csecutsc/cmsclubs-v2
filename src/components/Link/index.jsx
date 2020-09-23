@@ -31,5 +31,5 @@ Link.propTypes = {
   to: PropTypes.string.isRequired,
   /** Force as external link, which adds target=_blank and noreferrer + noopener */
   external: PropTypes.bool,
-  ...Text.propTypes
-}
+  ...Text.propTypes,
+};

@@ -7,6 +7,10 @@
 
 :global {
   body {
+    &.animate {
+      @include mixins.transition(background-color, $await: false);
+    }
+    background-color: var(--c-background);
     margin: 0;
     &::-webkit-scrollbar {
       height: 0.5rem;

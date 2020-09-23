@@ -1,8 +1,11 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { RiMoonClearLine, RiSunLine } from 'react-icons/ri';
+import classNames from 'classnames';
 import { Link } from 'gatsby';
-import Logo from '../../images/logo.svg';
+import { DarkModeContext } from '../DarkModeProvider';
 import Section from '../Section';
 import Text from '../Text';
+import Logo from '../../images/logo.svg';
 import styles from './Navigation.module.scss';
 
 const links = [
@@ -17,10 +20,11 @@ const links = [
 ];
 
 export default function Navigation() {
+  const { isDark, setIsDark } = useContext(DarkModeContext);
   return (
     <Section contentClassName={styles.container} as='nav'>
       <div className={styles.logo}>
-        <Logo className={styles.asset} fill='var(--c-primary)' />
+        <Logo className={styles.asset} />
         <Text color='primary' bold>
           CMSClubs
         </Text>
@@ -38,6 +42,26 @@ export default function Navigation() {
             />
           </li>
         ))}
+        <li className={styles.item}>
+          <button
+            onClick={() => setIsDark()}
+            className={styles.button}
+          >
+            <RiMoonClearLine
+              className={classNames(
+                isDark && styles[`icon--hide`],
+                styles.icon,
+              )}
+            />
+            <RiSunLine
+              className={classNames(
+                isDark || styles[`icon--hide`],
+                styles[`icon--abs`],
+                styles.icon,
+              )}
+            />
+          </button>
+        </li>
       </ul>
     </Section>
   );

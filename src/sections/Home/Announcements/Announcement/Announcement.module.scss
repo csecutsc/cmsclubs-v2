@@ -1,7 +1,9 @@
+@use '../../../../utils/styles/mixins';
 @use '../../../../utils/styles/units';
 
 .card {
-  box-shadow: 0.5rem 0.5rem 2rem 1rem var(--c-text-b);
+  @include mixins.transition(background-color);
+  box-shadow: 0.5rem 0.5rem 2rem 1rem rgba(0,0,0,0.05);
   padding: map-get(units.$spacing, container);
   background-color: var(--c-background);
   border-radius: units.$radius;

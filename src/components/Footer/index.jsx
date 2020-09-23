@@ -1,14 +1,20 @@
 import React from 'react';
+import { graphql, useStaticQuery } from 'gatsby';
 import Section from '../Section';
 import Text from '../Text';
+import Link from '../Link';
 import styles from './Footer.module.scss';
 
 export default function Footer() {
+  const { site } = useStaticQuery(query);
   return (
     <Section contentClassName={styles.container} as='footer'>
-      <Text className={styles.text} bold>
-        Made with ❤ by CSEC Development
-      </Text>
+      <div className={styles.text}>
+        <Text bold>Made with ❤ by CSEC Development</Text>
+        <Link to={site.siteMetadata.repo} size='smaller' bold>
+          Source code
+        </Link>
+      </div>
       <Text
         onClick={() =>
           window.scrollTo({
@@ -25,3 +31,13 @@ export default function Footer() {
     </Section>
   );
 }
+
+const query = graphql`
+  {
+    site {
+      siteMetadata {
+        repo
+      }
+    }
+  }
+`;
