@@ -60,5 +60,6 @@ module.exports = {
       },
     },
     `gatsby-plugin-offline`,
+    `gatsby-plugin-mini-css-class-name`,
   ],
 };
