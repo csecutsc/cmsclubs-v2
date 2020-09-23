@@ -1,0 +1,39 @@
+import { Meta, ArgsTable, Canvas } from '@storybook/addon-docs/blocks';
+import Section from '.';
+
+<Meta title='Components/Section' component={Section}/>
+
+# Section Component
+### Basic building block for sections
+
+<div style={{ margin: `4rem 0` }}/>
+
+## Description
+
+This component is **always** the root component for any component within `/pages`
+as it defines the maxWidth of page and appropriate spacing to ensure a consistent look.
+
+The anonamy of the component is as follows,
+```
+ ___________________
+|     Container     |
+|   _____________   |
+|  |   Content   |  |
+|  |_____________|  |
+|___________________|
+```
+
+<div style={{ margin: `4rem 0` }}/>
+
+## Props
+<ArgsTable component={Section}/>
+
+<div style={{ margin: `4rem 0` }}/>
+
+## Example
+<Canvas>
+    <Section>
+        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris luctus, tortor a faucibus auctor, purus nisi dapibus arcu, ultricies finibus orci elit sit amet tellus. Ut rutrum cursus semper. Maecenas id nisl leo. Pellentesque convallis vestibulum nisl at sollicitudin. Curabitur non erat euismod, aliquet eros id, pellentesque ante. Integer et convallis eros. Aenean pulvinar neque vel tortor placerat, a ultrices massa posuere.
+        Maecenas in leo nec erat commodo feugiat. Praesent vel scelerisque leo. Pellentesque pellentesque, erat ac egestas interdum, velit neque facilisis diam, at lobortis libero nibh vitae velit. Proin commodo lectus nec erat efficitur, eget posuere justo suscipit. Quisque eleifend rutrum tortor ac euismod. Sed nisl risus, tempor efficitur eros at, ullamcorper convallis nulla. Pellentesque sed diam hendrerit, mollis justo eget, mattis ex. Aliquam erat volutpat. Praesent ullamcorper sapien nec elit pellentesque, in condimentum magna convallis. Cras in ultricies ipsum, in viverra nisi. Sed ac consectetur risus.
+    </Section>
+</Canvas>

@@ -39,12 +39,23 @@ Text.defaultProps = {
 };
 
 Text.propTypes = {
+  /** uppercase, lowercase, captialize */
   transform: PropTypes.string,
+  /** relax, normal, tight */
   spacing: PropTypes.string,
+  /** Exactly what you think it is */
   className: classNameType,
+  /** start, center, end */
   align: PropTypes.string,
+  /** Colors from css variables */
   color: PropTypes.string,
+  /** Refer to _variables.scss */
   size: PropTypes.string,
+  /** You should know this */
   bold: PropTypes.bool,
-  as: PropTypes.node,
+  /** What element should this component be? */
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 };

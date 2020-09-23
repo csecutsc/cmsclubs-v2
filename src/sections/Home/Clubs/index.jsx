@@ -4,7 +4,6 @@ import { graphql, useStaticQuery } from 'gatsby';
 import MDRenderer from '../../../components/MDRenderer';
 import Section from '../../../components/Section';
 import Text from '../../../components/Text';
-import Link from '../../../components/Link';
 import icons from './icon-map';
 import styles from './Clubs.module.scss';
 
@@ -40,7 +39,7 @@ export default function Clubs() {
                 {club.name} ({club.short})
               </Text>
               <ul className={styles.icons}>
-                {club.links.map(link => {
+                {club.links.map((link) => {
                   if (link.protocol === `Email`) {
                     link.url = `mailto:${link.url}`;
                   } else if (link.protocol === `Telephone`) {
@@ -48,13 +47,15 @@ export default function Clubs() {
                   }
                   return (
                     <li key={link.id}>
-                      <a className={styles[`icon-link`]} href={link.url} target='_blank' rel='noreferrer noopener'>
-                        {React.createElement(
-                          icons[link.type],
-                          {
-                            className: styles[`icon-asset`],
-                          },
-                        )}
+                      <a
+                        className={styles[`icon-link`]}
+                        href={link.url}
+                        target='_blank'
+                        rel='noreferrer noopener'
+                      >
+                        {React.createElement(icons[link.type], {
+                          className: styles[`icon-asset`],
+                        })}
                       </a>
                     </li>
                   );
@@ -89,9 +90,7 @@ const query = graphql`
         }
         customUrl
         description
-        links(
-          where: { type_not: OTHER }
-        ) {
+        links(where: { type_not: OTHER }) {
           id
           url
           type

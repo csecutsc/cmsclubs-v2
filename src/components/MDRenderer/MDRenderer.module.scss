@@ -1,8 +1,58 @@
+@use '../../utils/styles/fonts';
 @use '../../utils/styles/units';
 
-.paragraph {
-  margin-bottom: map-get(units.$spacing, component);
-  &:last-child {
-    margin-bottom: 0;
+.container {
+  font-family: fonts.$font, sans-serif;
+  color: var(--c-text);
+
+  h1, h2, h3, h4, h5, h6 {
+    color: var(--c-heading);
+  }
+
+  code {
+    background-color: var(--c-text-b);
+    padding: map-get(units.$spacing, element);
+    font-size: map-get(units.$text, smaller);
+    border-radius: 6px;
+  }
+
+  blockquote {
+    padding: map-get(units.$spacing, element) map-get(units.$spacing, component);
+    border-left: 3px solid var(--c-primary);
+    background-color: var(--c-text-b);
+    border-bottom-right-radius: 6px;
+    border-top-right-radius: 6px;
+    margin-left: 0;
+
+    & > *:first-child {
+      margin-top: 0;
+    }
+
+    & > *:last-child {
+      margin-bottom: 0;
+    }
+  }
+
+  table {
+    border-collapse: collapse;
+  }
+
+  thead th {
+    background-color: var(--c-text-b);
+    color: var(--c-primary);
+
+    &:first-child {
+      border-bottom-left-radius: 6px;
+      border-top-left-radius: 6px;
+    }
+
+    &:last-child {
+      border-bottom-right-radius: 6px;
+      border-top-right-radius: 6px;
+    }
+  }
+
+  th, td {
+    padding: map-get(units.$spacing, element) map-get(units.$spacing, component);
   }
 }

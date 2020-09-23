@@ -4,6 +4,10 @@
   "description": "The portal to all clubs and events related to the Department of Computer and Mathematical Sciences at UTSC.",
   "version": "0.1.0",
   "author": "CSEC",
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/csecutsc/cmsclubs-v2.git"
+  },
   "dependencies": {
     "classnames": "^2.2.6",
     "gatsby": "^2.24.60",
@@ -27,8 +31,19 @@
     "sass": "^1.26.10"
   },
   "devDependencies": {
+    "@babel/core": "^7.11.6",
+    "@storybook/addon-actions": "^6.0.21",
+    "@storybook/addon-essentials": "^6.0.21",
+    "@storybook/addon-links": "^6.0.21",
+    "@storybook/preset-scss": "^1.0.2",
+    "@storybook/react": "^6.0.21",
+    "babel-loader": "^8.1.0",
+    "css-loader": "^4.3.0",
     "prettier": "2.0.5",
-    "pretty-quick": "^2.0.2"
+    "pretty-quick": "^2.0.2",
+    "react-is": "^16.13.1",
+    "sass-loader": "^10.0.2",
+    "style-loader": "^1.2.1"
   },
   "keywords": [
     "CSEC",
@@ -48,6 +63,8 @@
     "build": "npm run generate && gatsby build",
     "generate": "node ./codegen",
     "serve": "gatsby serve",
-    "clean": "gatsby clean"
+    "clean": "gatsby clean",
+    "storybook": "start-storybook -p 8001 -s ./static",
+    "build-storybook": "build-storybook -s ./static"
   }
 }

@@ -49,7 +49,8 @@
   border-radius: 999px;
   display: flex;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--c-primary-b);
     color: var(--c-primary-h);
   }

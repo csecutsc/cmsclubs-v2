@@ -1,0 +1,37 @@
+@use '../src/utils/styles/fonts';
+
+:global {
+    .sbdocs:not(.sbdocs-preview) {
+        & > h1, & > h2, & > h3, & > h4, & > h5, & > h6 {
+            font-family: fonts.$font, sans-serif;
+            color: var(--c-heading);
+            margin: 0;
+        }
+
+        & > h3 {
+            color: var(--c-primary);
+        }
+
+        & > p {
+            font-family: fonts.$font, sans-serif;
+            color: var(--c-text);
+            line-height: 1.6;
+
+            code {
+                background-color: var(--c-primary-b);
+                padding: 0.2rem 0.3rem;
+                color: var(--c-primary);
+                border-radius: 2px;
+                font-size: 0.9rem;
+            }
+        }
+
+        .docblock-argstable {
+            margin: 0;
+        }
+
+        .sbdocs-preview {
+            margin-top: 0.7rem;
+        }
+    }
+}

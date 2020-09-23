@@ -24,8 +24,15 @@ Section.defaultProps = {
 };
 
 Section.propTypes = {
+  /** The className for the element wrapping the content */
   contentClassName: classNameType,
+  /** The className for the element main container */
   className: classNameType,
+  /** Exactly what you think it is */
   children: PropTypes.node,
-  as: PropTypes.node,
+  /** What is the tag used by the container? */
+  as: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.node,
+  ]),
 };
