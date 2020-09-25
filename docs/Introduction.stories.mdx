@@ -1,12 +1,10 @@
-import { Meta } from '@storybook/addon-docs/blocks';
+import { Meta, Title, Description } from '@storybook/addon-docs/blocks';
 import { repository } from '../package.json';
-import './index.scss';
 
 <Meta title='Documentation/1. Introduction' />
 
-# Introduction
-
-### Learn about the repo and how to get started
+<Title>Introduction</Title>
+<Description>Learn about the repo and how to get started</Description>
 
 <div style={{ margin: `2rem 0` }} />
 
@@ -21,12 +19,16 @@ import './index.scss';
   - The purpose of this is to provide documentation for users adding to the site. It's unlikely you need to touch the other components
 - For more information, such as specifics for schema - please contact CSEC.
 
+<div style={{ margin: `2rem 0` }} />
+
 ### Gatsby
 
 1.  First install [Nodejs](https://nodejs.org/en), I recommend node 14, but the LTS would do as well.
 2.  Clone the <a href={repository.url} target="_blank">repository</a>.
 3.  Prepare the `.env` file based off of the `.env.sample`. (Shouldn't work properly without the right schema)
 4.  `npm ci` & `npm start` - You are ready to start developing
+
+<div style={{ margin: `2rem 0` }} />
 
 ### Storybook
 

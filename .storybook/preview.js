@@ -9,6 +9,7 @@ global.___loader = {
 
 global.__BASE_PATH__ = '/';
 window.___navigate = (pathname) => action('NavigateTo:')(pathname);
+window.document.body.classList.add(`animate`);
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

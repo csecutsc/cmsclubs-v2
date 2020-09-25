@@ -1,42 +1,66 @@
 @use '../src/utils/styles/fonts';
 
-:global {
-  .sbdocs:not(.sbdocs-preview) {
-    & > h1,
-    & > h2,
-    & > h3,
-    & > h4,
-    & > h5,
-    & > h6 {
-      font-family: fonts.$font, sans-serif;
-      color: var(--c-heading);
-      margin: 0;
+:global(h1.sbdocs-title) {
+    font-family: fonts.$font, sans-serif;
+    color: var(--c-heading);
+    font-size: 2.6rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+:global(p.sbdocs-p) {
+    font-family: fonts.$font, sans-serif;
+    color: var(--c-primary);
+    font-size: 1.2rem;
+    line-height: 1.2;
+    margin: 0;
+}
+
+:global(.sbdocs-content) {
+    font-family: fonts.$font, sans-serif;
+    color: var(--c-text);
+    line-height: 1.8;
+
+    & > h2 {
+        color: var(--c-heading);
+        line-height: 1.2;
     }
 
     & > h3 {
-      color: var(--c-primary);
-    }
-
-    & > p {
-      font-family: fonts.$font, sans-serif;
-      color: var(--c-text);
-      line-height: 1.6;
-
-      code {
-        background-color: var(--c-primary-b);
-        padding: 0.2rem 0.3rem;
         color: var(--c-primary);
-        border-radius: 2px;
-        font-size: 0.9rem;
-      }
+        line-height: 1.2;
     }
 
-    .docblock-argstable {
-      margin: 0;
+    & > *:not(:global(.sbdocs-preview)) {
+        code {
+            background-color: var(--c-primary-b);
+            color: var(--c-primary);
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 80%;
+        }
+
+        a {
+            color: var(--c-primary);
+        }
     }
 
-    .sbdocs-preview {
-      margin-top: 0.7rem;
+    & > table {
+        td, th {
+            padding-right: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        th {
+            text-align: left;
+            padding-bottom: 0;
+            color: var(--c-primary);
+        }
     }
-  }
+}
+
+:global(.sbdocs-preview) {
+    font-family: initial;
+    line-height: initial;
+    color: initial;
 }
