@@ -35,13 +35,28 @@
         code {
             background-color: var(--c-primary-b);
             color: var(--c-primary);
-            padding: 0.25rem 0.5rem;
+            padding: 0.25rem 0.45rem;
             border-radius: 0.25rem;
             font-size: 80%;
         }
 
         a {
             color: var(--c-primary);
+        }
+    }
+
+    & > pre {
+        background-color: var(--c-text-b);
+        border-radius: 0.5rem;
+        font-size: 0.9rem;
+        padding: 1rem;
+
+        code {
+            background-color: transparent !important;
+            font-size: inherit !important;
+            border-radius: 0 !important;
+            color: inherit !important;
+            padding: 0 !important;
         }
     }
 
