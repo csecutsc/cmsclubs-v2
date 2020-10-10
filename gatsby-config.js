@@ -17,6 +17,18 @@ module.exports = {
     keywords,
     author,
   },
+  developMiddleware: (app) => {
+    const { createProxyMiddleware } = require(`http-proxy-middleware`);
+    app.use(
+      `/.netlify/functions/`,
+      createProxyMiddleware({
+        target: `http://localhost:9000`,
+        pathRewrite: {
+          '/.netlify/functions': ``,
+        },
+      }),
+    );
+  },
   plugins: [
     `gatsby-plugin-react-helmet`,
     `gatsby-transformer-sharp`,

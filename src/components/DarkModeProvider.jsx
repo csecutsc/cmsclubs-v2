@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import withWindow from '../utils/withWindow';
 
-const setClass = withWindow(isDark => {
+const setClass = withWindow((isDark) => {
   if (isDark) {
     document.body.classList.add(`dark`);
   } else {
@@ -29,17 +29,12 @@ export const DarkModeContext = React.createContext({
 });
 
 export default function DarkModeProvider({ children }) {
-  const [isDark, _setIsDark] = useState(
-    () => setClass(initState()),
-  );
-  const setIsDark = (state) => _setIsDark(
-    (_state) => setClass(state ?? !_state),
-  );
+  const [isDark, _setIsDark] = useState(() => setClass(initState()));
+  const setIsDark = (state) =>
+    _setIsDark((_state) => setClass(state ?? !_state));
 
   return (
-    <DarkModeContext.Provider
-      value={{ isDark, setIsDark }}
-    >
+    <DarkModeContext.Provider value={{ isDark, setIsDark }}>
       {children}
     </DarkModeContext.Provider>
   );

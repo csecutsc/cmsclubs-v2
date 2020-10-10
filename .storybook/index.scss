@@ -1,81 +1,82 @@
 @use '../src/utils/styles/fonts';
 
 :global(h1.sbdocs-title) {
-    font-family: fonts.$font, sans-serif;
-    color: var(--c-heading);
-    font-size: 2.6rem;
-    line-height: 1.2;
-    margin: 0;
+  font-family: fonts.$font, sans-serif;
+  color: var(--c-heading);
+  font-size: 2.6rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 :global(p.sbdocs-p) {
-    font-family: fonts.$font, sans-serif;
-    color: var(--c-primary);
-    font-size: 1.2rem;
-    line-height: 1.2;
-    margin: 0;
+  font-family: fonts.$font, sans-serif;
+  color: var(--c-primary);
+  font-size: 1.2rem;
+  line-height: 1.2;
+  margin: 0;
 }
 
 :global(.sbdocs-content) {
-    font-family: fonts.$font, sans-serif;
-    color: var(--c-text);
-    line-height: 1.8;
+  font-family: fonts.$font, sans-serif;
+  color: var(--c-text);
+  line-height: 1.8;
 
-    & > h2 {
-        color: var(--c-heading);
-        line-height: 1.2;
+  & > h2 {
+    color: var(--c-heading);
+    line-height: 1.2;
+  }
+
+  & > h3 {
+    color: var(--c-primary);
+    line-height: 1.2;
+  }
+
+  & > *:not(:global(.sbdocs-preview)) {
+    code {
+      background-color: var(--c-primary-b);
+      color: var(--c-primary);
+      padding: 0.25rem 0.45rem;
+      border-radius: 0.25rem;
+      font-size: 80%;
     }
 
-    & > h3 {
-        color: var(--c-primary);
-        line-height: 1.2;
+    a {
+      color: var(--c-primary);
+    }
+  }
+
+  & > pre {
+    background-color: var(--c-text-b);
+    border-radius: 0.5rem;
+    font-size: 0.9rem;
+    padding: 1rem;
+
+    code {
+      background-color: transparent !important;
+      font-size: inherit !important;
+      border-radius: 0 !important;
+      color: inherit !important;
+      padding: 0 !important;
+    }
+  }
+
+  & > table {
+    td,
+    th {
+      padding-right: 0.5rem;
+      padding-bottom: 0.5rem;
     }
 
-    & > *:not(:global(.sbdocs-preview)) {
-        code {
-            background-color: var(--c-primary-b);
-            color: var(--c-primary);
-            padding: 0.25rem 0.45rem;
-            border-radius: 0.25rem;
-            font-size: 80%;
-        }
-
-        a {
-            color: var(--c-primary);
-        }
+    th {
+      text-align: left;
+      padding-bottom: 0;
+      color: var(--c-primary);
     }
-
-    & > pre {
-        background-color: var(--c-text-b);
-        border-radius: 0.5rem;
-        font-size: 0.9rem;
-        padding: 1rem;
-
-        code {
-            background-color: transparent !important;
-            font-size: inherit !important;
-            border-radius: 0 !important;
-            color: inherit !important;
-            padding: 0 !important;
-        }
-    }
-
-    & > table {
-        td, th {
-            padding-right: 0.5rem;
-            padding-bottom: 0.5rem;
-        }
-
-        th {
-            text-align: left;
-            padding-bottom: 0;
-            color: var(--c-primary);
-        }
-    }
+  }
 }
 
 :global(.sbdocs-preview) {
-    font-family: initial;
-    line-height: initial;
-    color: initial;
+  font-family: initial;
+  line-height: initial;
+  color: initial;
 }

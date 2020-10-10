@@ -76,7 +76,8 @@
   display: flex;
   border: none;
 
-  &:hover, &:focus {
+  &:hover,
+  &:focus {
     background-color: var(--c-primary-b);
     color: var(--c-primary-h);
   }

@@ -20,13 +20,14 @@ $colors: map-merge(
 // b - background, a - active, h - hover
 @mixin generate($tag, $color) {
   --c-#{$tag}-b-a: #{rgba($color, 0.15)};
-  --c-#{$tag}-b-h: #{rgba($color, 0.10)};
+  --c-#{$tag}-b-h: #{rgba($color, 0.1)};
   --c-#{$tag}-b: #{rgba($color, 0.05)};
   --c-#{$tag}-a: #{darken($color, 10%)};
   --c-#{$tag}-h: #{darken($color, 5%)};
   --c-#{$tag}: #{$color};
 }
 
+// For loading colors into root of the site
 @mixin init {
   :root {
     @each $key, $val in $colors {

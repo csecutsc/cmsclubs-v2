@@ -34,14 +34,14 @@ CSS vars are heavier vs SCSS vars as one is prebuilt and static, but one adds an
 
 ## Important notes
 
- - Use `rem` instead of something like `em` or `px/pt` (God forbid u use `cm/inch` - I will find you and I will vote you out the airlock).
-    - `em` is nice, however it's lack of `r` means that the `em` isnt tied to a centralized source - which is what we want
-    - `px/pt` straightup has no responsiveness, hence requires alot of media queries to maintain... Not ideal as it adds bulk to the CSS and requires
-      extra effort to keep consistent.
-    - `%/vh/vw` is okay if you require some sort of decentralized relative unit of measurement.
- - Use `@mixins.transitions` instead of defining it yourself. It has some minor stuff which applies the transition later, which lets us do some cool stuff now/later
-    - We can disable animations at will to help with lower end devices (We can add this one day... and do stuff like check for `prefers-reduced-motion`)
-    - This split second of disabled animations is key for allowing darkmode users from not being flash banged one load (Trust me it does wonders)
-        - You can also disabled this skip if you need so (Not sure why... but hey its there!)
-    - It allows for us to consistency use the same speeds and ease... it also saves you work so why complain!
- - Do not touch the scss files in `docs` & `.storybook` unless if you know what you are doing
+- Use `rem` instead of something like `em` or `px/pt` (God forbid u use `cm/inch` - I will find you and I will vote you out the airlock).
+  - `em` is nice, however it's lack of `r` means that the `em` isnt tied to a centralized source - which is what we want
+  - `px/pt` straightup has no responsiveness, hence requires alot of media queries to maintain... Not ideal as it adds bulk to the CSS and requires
+    extra effort to keep consistent.
+  - `%/vh/vw` is okay if you require some sort of decentralized relative unit of measurement.
+- Use `@mixins.transitions` instead of defining it yourself. It has some minor stuff which applies the transition later, which lets us do some cool stuff now/later
+  - We can disable animations at will to help with lower end devices (We can add this one day... and do stuff like check for `prefers-reduced-motion`)
+  - This split second of disabled animations is key for allowing darkmode users from not being flash banged one load (Trust me it does wonders)
+    - You can also disabled this skip if you need so (Not sure why... but hey its there!)
+  - It allows for us to consistency use the same speeds and ease... it also saves you work so why complain!
+- Do not touch the scss files in `docs` & `.storybook` unless if you know what you are doing
