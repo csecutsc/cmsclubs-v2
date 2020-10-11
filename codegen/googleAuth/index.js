@@ -1,10 +1,10 @@
 const { exec } = require(`child_process`);
 const fs = require(`fs/promises`);
-require(`dotenv`).config();
 
+const { GOOGLE_CREDENTIALS_FILE } = require(`../env`);
 module.exports = async function () {
   await fs.writeFile(
-    `./lambdas/${ process.env.GOOGLE_CREDENTIALS_FILE }`,
+    `./lambdas/${ GOOGLE_CREDENTIALS_FILE }`,
     process.env.GOOGLE_CREDENTIALS,
   );
   // To slim the environment variables down for AWS

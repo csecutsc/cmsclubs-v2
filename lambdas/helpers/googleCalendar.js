@@ -1,10 +1,11 @@
 const { google } = require('googleapis');
 const md = require('markdown-it')();
 
+
 const getAuth = () => {
   return new google.auth.GoogleAuth({
     scopes: [`https://www.googleapis.com/auth/calendar`],
-    keyFile: process.env.GOOGLE_CREDENTIALS_FILE,
+    keyFile: require('../../codegen/env').GOOGLE_CREDENTIALS_FILE,
   });
 };
 
