@@ -1,14 +1,7 @@
 const { google } = require('googleapis');
+const getAuth = require('./googleAuth');
 const md = require('markdown-it')();
 require(`dotenv`).config();
-
-
-const getAuth = () => {
-  return new google.auth.GoogleAuth({
-    scopes: [`https://www.googleapis.com/auth/calendar`],
-    keyFile: require('../../codegen/env').GOOGLE_CREDENTIALS_FILE,
-  });
-};
 
 const getCalendar = async () => {
   return google.calendar({ version: `v3`, auth: await getAuth() });
