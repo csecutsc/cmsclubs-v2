@@ -2,3 +2,5 @@
   command = "npm run build"
   functions = ".lambdas"
   publish = "public"
+  environment
+    GOOGLE_CREDENTIALS
