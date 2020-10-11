@@ -1,6 +1,6 @@
-import googleCalendar from '../helpers/googleCalendar';
+const googleCalendar = require('../helpers/googleCalendar');
 
-export async function handler({ headers, body }, _, callback) {
+module.exports = async function handler({ headers, body }, _, callback) {
   if (headers.secret !== process.env.GRAPHCMS_SECRET) {
     return callback(null, {
       statusCode: 403,

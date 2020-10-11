@@ -1,4 +1,4 @@
-export function handler(_, __, callback) {
+module.exports = function handler(_, __, callback) {
   callback(null, {
     statusCode: 301,
     headers: {

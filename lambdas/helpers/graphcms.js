@@ -1,31 +1,21 @@
 const fetch = require('node-fetch');
+require(`dotenv`).config();
 
 module.exports = {
-  getEvents() {
+  fetch(query, variables) {
     return fetch(process.env.GATSBY_GRAPHCMS_ENDPOINT, {
       method: `POST`,
       headers: {
         Authorization: `bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
       },
-      body: JSON.stringify({
-        query: `
-          {
-            events {
-              heading
-              description
-              location
-              start
-              tags
-              end
-              id
-            }
-          }
-        `,
-      }),
-    }).then(async (_) => {
+      body: JSON.stringify(
+        Object.assign({ query }, variables && { variables }),
+      ),
+    })
+    .then(async (_) => {
       const { data, error } = await _.json();
       if (error) throw new Error(error);
-      else return data.events;
+      else return data;
     });
   },
 };

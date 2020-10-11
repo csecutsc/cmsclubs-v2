@@ -1,5 +1,6 @@
 const { google } = require('googleapis');
 const md = require('markdown-it')();
+require(`dotenv`).config();
 
 
 const getAuth = () => {

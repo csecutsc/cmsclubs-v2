@@ -6,13 +6,9 @@ export default function EventList() {
     let mounted = true;
     (async () => {
       const { data, errors } = await fetch(
-        process.env.GATSBY_GRAPHCMS_ENDPOINT,
+        `/.netlify/functions/graphcms`,
         {
           method: `POST`,
-          headers: {
-            Authorization: `Bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
-            'Content-Type': `application/json`,
-          },
           body: JSON.stringify({
             variables: {
               now: new Date(),
