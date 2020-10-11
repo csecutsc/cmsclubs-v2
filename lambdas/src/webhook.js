@@ -1,4 +1,4 @@
-const googleCalendar = require('../helpers/googleCalendar');
+import googleCalendar from '../helpers/googleCalendar';
 
 export async function handler({ headers, body }, _, callback) {
   if (headers.secret !== process.env.GRAPHCMS_SECRET) {

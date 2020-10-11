@@ -57,6 +57,7 @@ typings/
 # gatsby files
 .cache/
 .lambdas/
+lambdas/netlify.toml
 public
 
 # storybook files

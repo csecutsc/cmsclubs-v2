@@ -4,5 +4,6 @@ export function handler(_, __, callback) {
     headers: {
       Location: `/angr_kev.png`,
     },
+    body: ``,
   });
 }

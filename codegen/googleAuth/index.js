@@ -4,7 +4,7 @@ require(`dotenv`).config();
 
 module.exports = async function () {
   await fs.writeFile(
-    process.env.GOOGLE_CREDENTIALS_FILE,
+    `./lambdas/${ process.env.GOOGLE_CREDENTIALS_FILE }`,
     process.env.GOOGLE_CREDENTIALS,
   );
   // To slim the environment variables down for AWS
