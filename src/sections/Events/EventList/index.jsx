@@ -6,7 +6,7 @@ export default function EventList() {
     let mounted = true;
     (async () => {
       const data = await fetch(
-        `/.netlify/functions/graphcms`,
+        `${process.env.GATSBY_LAMBDA_ENDPOINT}/graphcms`,
         {
           method: `POST`,
           body: JSON.stringify({

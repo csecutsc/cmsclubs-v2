@@ -3,10 +3,10 @@ require(`dotenv`).config();
 
 module.exports = {
   fetch(query, variables) {
-    return fetch(process.env.GATSBY_GRAPHCMS_ENDPOINT, {
+    return fetch(process.env.GRAPHCMS_ENDPOINT, {
       method: `POST`,
       headers: {
-        Authorization: `bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
+        Authorization: `bearer ${process.env.GRAPHCMS_TOKEN}`,
       },
       body: JSON.stringify(
         Object.assign({ query }, variables && { variables }),
