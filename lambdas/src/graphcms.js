@@ -2,6 +2,7 @@ const graphcms = require('../helpers/graphcms');
 
 exports.handler = async function({ body }, _, callback) {
     try {
+        body = JSON.parse(body);
         const data = await graphcms.fetch(body.query, body.variables);
         return callback(null, {
             statusCode: 200,
