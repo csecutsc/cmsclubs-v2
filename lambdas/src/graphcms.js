@@ -1,6 +1,6 @@
 const graphcms = require('../helpers/graphcms');
 
-module.exports = async function handler({ body }, _, callback) {
+exports.handler = async function({ body }, _, callback) {
     try {
         const data = await graphcms.fetch(body.query, body.variables);
         return callback(null, {
