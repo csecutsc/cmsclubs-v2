@@ -44,9 +44,9 @@ module.exports = {
       resolve: `gatsby-source-graphql`,
       options: {
         headers: {
-          Authorization: `Bearer ${process.env.GATSBY_GRAPHCMS_TOKEN}`,
+          Authorization: `Bearer ${process.env.GRAPHCMS_TOKEN}`,
         },
-        url: process.env.GATSBY_GRAPHCMS_ENDPOINT,
+        url: process.env.GRAPHCMS_ENDPOINT,
         typeName: `GraphCMS`,
         fieldName: `gcms`,
       },
