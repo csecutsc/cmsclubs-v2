@@ -9,7 +9,7 @@ export default function Announcements() {
   useEffect(() => {
     let mounted = true;
     (async () => {
-      const { data, errors } = await fetch(
+      const data = await fetch(
         `/.netlify/functions/graphcms`,
         {
           method: `POST`,
@@ -21,10 +21,6 @@ export default function Announcements() {
           }),
         },
       ).then((_) => _.json());
-
-      if (errors) {
-        console.error(errors);
-      }
       if (mounted) {
         setAnnons(data?.announcements || []);
       }

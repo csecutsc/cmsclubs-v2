@@ -10,7 +10,7 @@ export default function Events() {
   useEffect(() => {
     let mounted = true;
     (async () => {
-      const { data, errors } = await fetch(
+      const data = await fetch(
         `/.netlify/functions/graphcms`,
         {
           method: `POST`,
@@ -22,10 +22,6 @@ export default function Events() {
           }),
         },
       ).then((_) => _.json());
-
-      if (errors) {
-        console.error(errors);
-      }
       if (mounted) {
         setEvents(data?.events || []);
       }
