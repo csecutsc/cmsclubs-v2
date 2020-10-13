@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "cp ../netlify.toml ./netlify.toml && netlify-lambda serve src",
+    "start": "cp ../netlify.toml ./netlify.toml && cp ../.env .env && npm run start:lambda",
+    "start:lambda": "netlify-lambda serve --config ./webpack.functions.js src",
     "build": "npm ci --production && zip-it-and-ship-it src ../.lambdas"
   },
   "author": "",

@@ -36,3 +36,17 @@ Assuming you have done the steps above (minus 3, thats not important for this,
 and `npm start`). You should be able to run `npm run storybook`.
 
 <div style={{ margin: `3rem 0` }} />
+
+## Development server
+
+To connect multiple servers, and implement hot reloading as needed, we use `concurrently` to run multiple "services" at once.
+The following services we have running are codegen, storybook, gatsby, and netlify lambdas.
+
+Therefore, when `npm start` is used, the following steps are taken
+ - `codegen` is run initially to prepare any files which are dependencies for certain services
+ - Concurrently is run which performs the following
+    - `codegen`: Runs again (No way to avoid that), then watches for file changes in `/codegen` using `nodemon`.
+    - `storybook`: Starts the Storybook development server. This can be accessed via `http://localhost:8001`.
+    - `gatsby`: Starts the Gatsby development server. This can be accessed via `http://localhost:8000`.
+    - `lambda`: Prepares the lambda server dependencies via `npm ci`, and runs `npm run start` in `/lambdas/package.json`.
+

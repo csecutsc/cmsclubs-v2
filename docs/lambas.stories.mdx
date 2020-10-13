@@ -1,0 +1,36 @@
+import { Meta, Title, Description } from '@storybook/addon-docs/blocks';
+
+<Meta title='Documentation/5. Lambda Functions' />
+
+<Title>Netlify Lambdas</Title>
+<Description>The magic behind the scenes</Description>
+
+<div style={{ margin: `2rem 0` }} />
+
+## Purpose of Lambdas
+
+This contains our serverless functions for any connections to third party applications, such as GraphCMS. Some of the purpose include
+ - Proxying requests to protect sensative information such as endpoints and tokens for our frontend applications
+ - Proving additional services such as webhooks for integrations with application such as GraphCMS
+
+You can learn a bit more about the configuration via reading the docs from Netlify and Gatsby respectively.
+
+<div style={{ margin: `3rem 0` }} />
+
+## Files/Folders
+
+| File/Folder | Description |
+| --- | --- |
+| `helpers` | Helper functions which would shared between endpoints such as wrappers for third party services. |
+| `src` | Holds all our lambdas, and only our lambdas, for packaging via `netlify-lambdas` **(DEV)** or `zip-it-and-ship-it` **(PROD)**. |
+| `webpack.functions.js` | Just to overwrite `netlify-lambdas` minify to reduce build times significantly for development. |
+
+<div style={{ margin: `3rem 0` }} />
+
+## Our Lambdas
+
+| File | Description |
+| --- | --- |
+| `graphcms.js` | A proxy for any fetches to GraphCMS, this is required for any data filtered by dynamic variables on the website. |
+| `kevs.js` | The best endpoint ever. It protects our application and deleting this would result in CSEC as a whole imploding. |
+| `webhook.js` | Our custom Google Calendar integration for connecting our events with Google Calendars |

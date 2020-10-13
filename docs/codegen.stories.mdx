@@ -42,6 +42,7 @@ Note that all variables mentioned here is from `/codegen/env.js` and not `.env`
 | ------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
 | `color` | Takes `PRIMARY_COLOR` and generates `_color.scss`. This abstraction allows us to use it in `logo` and `gatsby-config.js` to use the same primary color for the manifest and logo of the site                  |
 | `fonts` | Takes `FONT` as font family name, and generates the `@font-face` in `_fonts.scss` and static folder. This allows for us to change fonts easily and quickly without having to mannual rewrite the `@font-face` |
+| `googleAuth` | Generates google-auth.json within lambdas function for deployment. (In the future, look into pruning env in the process for AWS env limit of 4kb) |
 | `logo`  | Generates `logo.svg` so that it uses the right color. It's kinda basic, but it helps with consistency of variables                                                                                            |
 
 <div style={{ margin: `3rem 0` }} />

@@ -17,6 +17,7 @@ module.exports = {
     keywords,
     author,
   },
+  // This is required to make development server to match prod endpoint
   developMiddleware: (app) => {
     const { createProxyMiddleware } = require(`http-proxy-middleware`);
     app.use(
