@@ -11,6 +11,7 @@ exports.handler = async function({ headers, body }, _) {
   }
 
   const { data: event, operation } = JSON.parse(body);
+  console.log(event);
   try {
     switch (operation) {
       case `publish`: {
