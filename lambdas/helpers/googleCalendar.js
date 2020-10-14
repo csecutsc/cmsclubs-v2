@@ -1,12 +1,13 @@
+const MarkdownIt = require('markdown-it');
 const { google } = require('googleapis');
 const getAuth = require('./googleAuth');
-const md = require('markdown-it')();
 require(`dotenv`).config();
 
 const getCalendar = async () => {
   return google.calendar({ version: `v3`, auth: await getAuth() });
 };
 
+const md = new MarkdownIt();
 const serializeGraphCMSEvent = (event) => ({
   summary: event.heading,
   description:
