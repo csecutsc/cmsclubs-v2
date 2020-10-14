@@ -11,7 +11,7 @@ const md = new MarkdownIt();
 const serializeGraphCMSEvent = (event) => ({
   summary: event.heading,
   description:
-    md.renderInline(event.description) +
+    md.renderInline(event.description || '') +
     `\n\n${event.tags.map((i) => `<strong>${i}</strong>`).join(', ')}`,
   location: event.location,
   start: {
